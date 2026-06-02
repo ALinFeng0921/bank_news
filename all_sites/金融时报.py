@@ -9,11 +9,7 @@ from utils.html_util import (
 
 
 def search_news(keyword=None, page_num=1):
-
-    if page_num == 1:
-        url = "http://www.financialnews.com.cn/node_3005.html"
-    else:
-        url = f"http://www.financialnews.com.cn/node_3005_{page_num}.html"
+    url = "https://www.financialnews.com.cn/node_3005.html"
 
     soup = get_soup(get_html(url))
 
@@ -27,7 +23,6 @@ def search_news(keyword=None, page_num=1):
 
         if not title:
             continue
-
 
         result.append({
             "title": title,
