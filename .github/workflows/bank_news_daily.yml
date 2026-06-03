@@ -2,8 +2,6 @@ name: Bank News Daily
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '7/10 * * * *'
 
 jobs:
 
