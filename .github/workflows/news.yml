@@ -1,11 +1,9 @@
 name: Bank News
 
 on:
-
   workflow_dispatch:
-
   schedule:
-    - cron: '15 2 * * *'
+    - cron: '0 3 * * *'
 
 jobs:
 
