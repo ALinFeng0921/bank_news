@@ -1,26 +1,25 @@
-name: Test Schedule
+name: Test Trigger
 
 on:
   workflow_dispatch:
+
+  push:
+    branches:
+      - main
+
   schedule:
-    - cron: '*/8 * * * *'
+    - cron: '0 3 * * *'
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Show trigger info
+      - name: 显示触发方式
         run: |
-          echo "Triggered by: ${{ github.event_name }}"
-          echo "Time: $(date -u)"
+          echo "event=${{ github.event_name }}"
+          date
 
-      - name: Create log
+      - name: 输出测试文件
         run: |
-          echo "Schedule test success" > test.txt
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: schedule-test
-          path: test.txt
+          echo "hello github actions"
